@@ -8,4 +8,22 @@ use Illuminate\Database\Eloquent\Model;
 class {{ class }} extends Model
 {
     {{ factory }}
+
+    protected $guarded = [
+        'id',
+        'created_at',
+        'updated_at',
+    ];
+
+    protected $hidden = [
+        //
+    ];
+
+    protected function casts(): array
+    {
+        return [
+            //
+        ];
+    }
+
 }
