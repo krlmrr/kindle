@@ -39,7 +39,7 @@ $register = function () {
 ?>
 
 <div>
-    @volt
+    {{-- @volt --}}
     <form wire:submit="register" class="space-y-4">
         <flux:input
             wire:model="name"

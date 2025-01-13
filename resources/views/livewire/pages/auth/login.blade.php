@@ -23,7 +23,7 @@ $login = function () {
 ?>
 
 <div>
-    @volt
+    {{-- @volt --}}
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 

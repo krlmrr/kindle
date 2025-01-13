@@ -15,15 +15,19 @@ middleware(['auth', 'verified']);
 
     <flux:main container class="space-y-6">
         <flux:card>
-            <livewire:components.profile.update-profile-information-form />
+            <livewire:partials.profile.update-profile-information-form />
         </flux:card>
 
         <flux:card>
-            <livewire:components.profile.update-password-form />
+            <livewire:partials.profile.update-password-form />
         </flux:card>
 
         <flux:card>
-            <livewire:components.profile.delete-user-form />
+            <livewire:partials.profile.two-factor-authentication />
+        </flux:card>
+
+        <flux:card>
+            <livewire:partials.profile.delete-user-form />
         </flux:card>
     </flux:main>
 </x-app-layout>

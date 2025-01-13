@@ -1,4 +1,5 @@
 import forms from '@tailwindcss/forms'
+import colors from 'tailwindcss/colors'
 
 export default {
     darkMode: 'selector',
@@ -11,6 +12,10 @@ export default {
     ],
     theme: {
         extend: {
+            colors: {
+                // Re-assign Flux's base color (zinc) to a different shade of gray...
+                zinc: colors.slate,
+            },
             fontFamily: {
                 sans: ['Inter', 'sans-serif'],
             },

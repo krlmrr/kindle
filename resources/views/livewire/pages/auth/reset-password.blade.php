@@ -62,7 +62,7 @@ $resetPassword = function () {
 ?>
 
 <div>
-    @volt
+    {{-- @volt --}}
     <form wire:submit="resetPassword">
         <flux:input
             wire:model="email"

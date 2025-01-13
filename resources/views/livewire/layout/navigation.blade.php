@@ -61,7 +61,7 @@ $logout = function (Logout $logout) {
             </div>
 
             <div class="flex items-center space-x-2">
-                <livewire:components.theme-selector />
+                <x-theme-switcher />
 
                 <livewire:components.notifications />
 
