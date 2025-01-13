@@ -23,7 +23,7 @@
 ### How do I use this?
 1. Clone this repo
 2. Run `composer install`
-3. Run `mv .env.example .env`
+3. Run `cp .env.example .env`
 4. Run `php artisan key:generate`
 5. Run `php artisan solo`
 6. Profit?
