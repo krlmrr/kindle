@@ -3,35 +3,48 @@
     use function Livewire\Volt\{on, state};
 
     state([
-        'notifications' => auth()->user()->notifications()->get(),
+        'notifications' => auth()->user()->unreadNotifications,
         'userId' => auth()->user()->id,
     ]);
 
     on(['echo-private:App.Models.User.{userId},.notification' => function ($notification) {
-        dd($this->notifications);
-        // $this->notifications->;
+        $this->notifications = auth()->user()->unreadNotifications;
     }]);
+
+    $markAsRead = function ($notification) {
+        auth()->user()->notifications->findOrFail($notification['id'])->markAsRead();
+
+        $this->notifications = auth()->user()->unreadNotifications;
+    };
 ?>
 
 <div>
     <flux:dropdown align="end">
         <flux:button variant="ghost">
             @if (count($notifications) > 0)
-                <flux:icon.bell-alert class="dark:text-gray-300" />
+                <flux:icon.bell-alert class="text-red-500 dark:text-red-400" />
             @else
                 <flux:icon.bell class="dark:text-gray-400"/>
             @endif
         </flux:button>
 
-        <flux:menu>
+        <flux:menu class="w-56">
             @if(count($notifications))
                 @foreach($notifications as $notification)
-                    <flux:menu.item>
-                        {{ $notification->data['message'] }}
-                    </flux:menu.item>
+                    <div class="flex items-center gap-2">
+                        <flux:menu.item>
+                            {{ $notification->data['message'] }}
+                        </flux:menu.item>
+
+                        <flux:button
+                            icon="x-mark"
+                            variant="subtle"
+                            wire:click="markAsRead({{ $notification }})"
+                        />
+                    </div>
                 @endforeach
             @else
-                <flux:menu.item>
+                <flux:menu.item disabled>
                     No notifications
                 </flux:menu.item>
             @endif

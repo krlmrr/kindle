@@ -2,6 +2,7 @@
 
 namespace App\Notifications;
 
+use App\Models\User;
 use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Messages\BroadcastMessage;
@@ -11,7 +12,7 @@ class TestNotification extends Notification
 {
     use Queueable;
 
-    public function __construct() {}
+    public function __construct(public User $user) {}
 
     public function via(object $notifiable): array
     {
@@ -27,7 +28,7 @@ class TestNotification extends Notification
 
     public function broadcastOn()
     {
-        return new PrivateChannel('App.Models.User.1');
+        return new PrivateChannel('App.Models.User.' . $this->user->id);
     }
 
     public function broadcastAs(): string

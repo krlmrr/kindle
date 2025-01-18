@@ -6,14 +6,17 @@
 
     title('Dashboard');
 
-    state(['sortBy' => 'name', 'sortDirection' => 'desc']);
+    state([
+        'sortBy' => 'name',
+        'sortDirection' => 'desc'
+    ]);
 
     $users = computed(function () {
         return User::query()->orderBy($this->sortBy, $this->sortDirection)->paginate(10);
     });
 
     $sendTestNotification = function() {
-        return auth()->user()->notify(new TestNotification());
+        return auth()->user()->notify(new TestNotification(auth()->user()));
     };
 
     $sort = function($column) {
@@ -36,10 +39,6 @@
             <flux:button wire:click="sendTestNotification()">
                 Send Test Notification
             </flux:button>
-
-            <p>
-                {{ auth()->user()->id }}
-            </p>
         </flux:card>
 
         <flux:card>
