@@ -10,7 +10,6 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
-        "laravel/folio": "^1.1",
         "laravel/framework": "^11.31",
         "laravel/horizon": "^5.30",
         "laravel/nova": "^5.0",

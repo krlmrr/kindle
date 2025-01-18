@@ -27,12 +27,12 @@ class TestNotification extends Notification
 
     public function broadcastOn()
     {
-        return new PrivateChannel('notifications.1');
+        return new PrivateChannel('App.Models.User.1');
     }
 
-    public function broadcastAs()
+    public function broadcastAs(): string
     {
-        return 'TestNotification';
+        return 'notification';
     }
 
     public function toArray(object $notifiable): array

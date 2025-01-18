@@ -1,17 +1,16 @@
 <?php
     use Livewire\Attributes\On;
-    use function Livewire\Volt\state;
+    use function Livewire\Volt\{on, state};
 
     state([
         'notifications' => auth()->user()->notifications()->get(),
         'userId' => auth()->user()->id,
     ]);
 
-    #[On('echo-private:notifications.{userId},.TestNotification')]
-    function refreshNotifications($payload)
-    {
-        $this->notifications->refresh();
-    }
+    on(['echo-private:App.Models.User.{userId},.notification' => function ($notification) {
+        dd($this->notifications);
+        // $this->notifications->;
+    }]);
 ?>
 
 <div>

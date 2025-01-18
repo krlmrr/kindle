@@ -30,9 +30,4 @@ class User extends Authenticatable implements MustVerifyEmail
             'password' => 'hashed',
         ];
     }
-
-    public function receivesBroadcastNotificationsOn(): string
-    {
-        return 'notifications.' . $this->id;
-    }
 }

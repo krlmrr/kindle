@@ -1,14 +1,10 @@
 <?php
+    use function Livewire\Volt\{title};
 
-use function Laravel\Folio\name;
-use function Laravel\Folio\{middleware};
-
-name('profile');
-middleware(['auth', 'verified']);
-
+    title(fn () => 'Profile: ' . auth()->user()->name);
 ?>
 
-<x-app-layout>
+<div>
     <x-slot name="header">
         Profile
     </x-slot>
@@ -30,4 +26,4 @@ middleware(['auth', 'verified']);
             <livewire:partials.profile.delete-user-form />
         </flux:card>
     </flux:main>
-</x-app-layout>
+</div>

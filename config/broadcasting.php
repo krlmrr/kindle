@@ -27,9 +27,7 @@ return [
     | each available type of connection are provided inside this array.
     |
     */
-
     'connections' => [
-
         'reverb' => [
             'driver' => 'reverb',
             'key' => env('REVERB_APP_KEY'),
@@ -76,7 +74,5 @@ return [
         'null' => [
             'driver' => 'null',
         ],
-
     ],
-
 ];
