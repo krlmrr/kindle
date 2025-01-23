@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Session;
 
 use function Livewire\Volt\layout;
 
-layout('layouts.guest');
+layout('components.layouts.guest');
 
 $sendVerification = function () {
     if (Auth::user()->hasVerifiedEmail()) {
@@ -29,7 +29,7 @@ $logout = function (Logout $logout) {
 ?>
 
 <div>
-    {{-- @volt --}}
+    @volt('pages.verify-email')
     <div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
         Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn't receive the email, we will gladly send you another.
     </div>
@@ -55,4 +55,5 @@ $logout = function (Logout $logout) {
             Log Out
         </flux:button>
     </div>
+    @endvolt
 </div>

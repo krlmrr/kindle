@@ -2,8 +2,10 @@
     use App\Models\User;
     use App\Notifications\TestNotification;
 
-    use function Livewire\Volt\{computed, state, title};
+    use function Laravel\Folio\{name};
+    use function Livewire\Volt\{computed, layout, state, title};
 
+    name('dashboard');
     title('Dashboard');
 
     state([
@@ -29,7 +31,8 @@
     };
 ?>
 
-<div>
+<x-layouts.app>
+    @volt('pages.dashboard')
     <x-slot name="header">
         Dashboard
     </x-slot>
@@ -112,4 +115,5 @@
             </flux:table>
         </flux:card>
     </flux:main>
-</div>
+    @endvolt
+</x-layouts.app>

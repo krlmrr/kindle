@@ -1,0 +1,20 @@
+<?php
+    use function Laravel\Folio\{name};
+    use function Livewire\Volt\{state, title};
+
+    name('');
+    title('');
+
+    state([]);
+?>
+<x-layouts.app>
+@volt('pages.')
+    <x-slot name="header">
+        //
+    </x-slot>
+    <flux:main container class="space-y-6">
+        <flux:card>
+        </flux:card>
+    </flux:main>
+@endvolt
+</x-layouts.app>

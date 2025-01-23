@@ -3,10 +3,9 @@
 use App\Livewire\Forms\LoginForm;
 use Illuminate\Support\Facades\Session;
 
-use function Livewire\Volt\form;
-use function Livewire\Volt\layout;
+use function Livewire\Volt\{layout, form};
 
-layout('layouts.guest');
+layout('components.layouts.guest');
 
 form(LoginForm::class);
 
@@ -23,7 +22,7 @@ $login = function () {
 ?>
 
 <div>
-    {{-- @volt --}}
+    @volt('pages.login')
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
@@ -68,4 +67,5 @@ $login = function () {
             </flux:button>
         </div>
     </form>
+    @endvolt
 </div>

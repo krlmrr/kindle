@@ -11,7 +11,7 @@ use function Livewire\Volt\layout;
 use function Livewire\Volt\rules;
 use function Livewire\Volt\state;
 
-layout('layouts.guest');
+layout('components.layouts.guest');
 
 state('token')->locked();
 

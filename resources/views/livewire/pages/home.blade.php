@@ -1,7 +1,7 @@
 <?php
-    use function Livewire\Volt\{layout, state};
+    use function Livewire\Volt\{layout};
 
-    layout('layouts.blank');
+    layout('components.layouts.blank');
 ?>
 
 <div class="grid gap-6 lg:grid-cols-2 lg:gap-8">

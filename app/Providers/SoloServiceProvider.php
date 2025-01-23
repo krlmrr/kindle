@@ -9,8 +9,6 @@ class SoloServiceProvider extends ServiceProvider
 {
     public function register()
     {
-        // Solo may not (should not!) exist in prod, so we have to
-        // check here first to see if it's installed.
         if (class_exists('\AaronFrancis\Solo\Manager')) {
             $this->configure();
         }
@@ -19,7 +17,6 @@ class SoloServiceProvider extends ServiceProvider
     public function configure()
     {
         Solo::useTheme('dark')
-            // Commands that auto start.
             ->addCommands([
                 'Vite' => 'npm run dev',
                 'Queue' => 'php artisan queue:listen --tries=1',
@@ -29,7 +26,6 @@ class SoloServiceProvider extends ServiceProvider
                 // Uncomment this if you are not using Laravel Herd.
                 // 'Reverb' => 'php artisan reverb:start',
             ])
-            // Not auto-started
             ->addLazyCommands([
                 'Logs' => 'php artisan pail',
                 // 'Pint' => 'pint --ansi',

@@ -14,7 +14,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans antialiased bg-white dark:bg-zinc-800 text-gray-600 dark:text-gray-400 min-h-screen">
-        <livewire:layout.navigation />
+        <livewire:components.navigation />
 
         @if (isset($header))
             <div class="max-w-7xl mx-auto pt-6 px-6 lg:px-8">
