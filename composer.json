@@ -52,6 +52,12 @@
         }
     },
     "scripts": {
+        "setup": [
+            "npm install",
+            "cp .env.example .env",
+            "@php artisan key:generate",
+            "@php artisan solo"
+        ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
