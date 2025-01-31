@@ -10,6 +10,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "dedoc/scramble": "^0.11.33",
         "laravel/folio": "^1.1",
         "laravel/framework": "^11.31",
         "laravel/horizon": "^5.30",
@@ -25,7 +26,7 @@
         "livewire/volt": "^1.0"
     },
     "require-dev": {
-        "aaronfrancis/solo": "^0.2.2",
+        "soloterm/solo": "^0.3.1",
         "barryvdh/laravel-debugbar": "^3.14",
         "barryvdh/laravel-ide-helper": "^3.5",
         "fakerphp/faker": "^1.23",
