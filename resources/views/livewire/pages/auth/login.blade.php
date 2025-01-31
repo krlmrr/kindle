@@ -23,46 +23,22 @@ $login = function () {
 
 <div>
     @volt('pages.login')
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
-
     <form wire:submit="login" class="space-y-4">
-        <flux:input
-            wire:model="form.email"
-            label="Email"
-            required
-            autofocus
-            autocomplete="username"
-        />
+        <flux:input wire:model="form.email" label="Email" required autofocus autocomplete="username" />
 
-        <flux:input
-            wire:model="form.password"
-            label="Password"
-            type="password"
-            required
-            autocomplete="current-password"
-        />
+        <flux:input wire:model="form.password" label="Password" type="password" required
+            autocomplete="current-password" />
 
-        <flux:checkbox
-            wire:model="form.remember"
-            label="Remember me"
-        />
+        <flux:checkbox wire:model="form.remember" label="Remember me" />
 
         <div class="flex items-center justify-end mt-4 space-x-3">
             @if (Route::has('password.request'))
-                <flux:button
-                    href="{{ route('password.request') }}"
-                    wire:navigate
-                    variant="subtle"
-                >
+                <flux:button href="{{ route('password.request') }}" wire:navigate variant="subtle">
                     Forgot your password?
                 </flux:button>
             @endif
 
-            <flux:button
-                variant="primary"
-                type="submit"
-            >
+            <flux:button variant="primary" type="submit">
                 Log in
             </flux:button>
         </div>

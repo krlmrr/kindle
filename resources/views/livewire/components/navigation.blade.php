@@ -23,6 +23,9 @@ state([
         ], [
             'name' => 'Horizon',
             'href' => '/horizon',
+        ], [
+            'name' => 'API Docs',
+            'href' => '/docs/api',
         ]
     ]
 ]);

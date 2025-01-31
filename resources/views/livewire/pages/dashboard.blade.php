@@ -32,7 +32,7 @@
 ?>
 
 <x-layouts.app>
-    @volt('pages.dashboard')
+@volt('pages.dashboard')
     <x-slot name="header">
         Dashboard
     </x-slot>
@@ -115,5 +115,5 @@
             </flux:table>
         </flux:card>
     </flux:main>
-    @endvolt
+@endvolt
 </x-layouts.app>

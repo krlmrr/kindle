@@ -15,15 +15,10 @@ class {{ class }} extends Model
         'updated_at',
     ];
 
-    protected $hidden = [
-        //
-    ];
+    protected $hidden = [];
 
     protected function casts(): array
     {
-        return [
-            //
-        ];
+        return [];
     }
-
 }
